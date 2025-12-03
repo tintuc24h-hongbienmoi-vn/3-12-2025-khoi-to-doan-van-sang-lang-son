@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vi:dEo toàn cảnh vụ việc</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;background:#f9f9f9;margin:0;color:#333}
+    header{background:#007bff;color:#fff;text-align:center;padding:20px 10px}
+    main{max-width:700px;margin:30px auto;background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+    img{max-width:100%;border-radius:8px;margin-top:10px}
+    h2{color:#007bff}
+    footer{text-align:center;color:#777;font-size:14px;margin-top:30px;padding-bottom:20px}
+
+    /* Popup overlay */
+    #popupOverlay{
+      display:none;
+      position:fixed;inset:0;
+      background:rgba(0,0,0,.75);
+      z-index:9999;
+      justify-content:center;align-items:center;
+    }
+    .popupBox{
+      position:relative;
+      max-width:90vw;
+      max-height:85vh;
+      border-radius:12px;
+    }
+    .popupBox img{display:block;max-width:90vw;max-height:80vh;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+    #closeBtn{
+      position:absolute;top:8px;right:8px;
+      width:36px;height:36px;border-radius:50%;border:none;
+      background:#ff3b30;color:#fff;font-size:18px;cursor:pointer;
+    }
+
+    /* Confirm box (Android non-webview) */
+    #confirmOverlay{
+      display:none;
+      position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;
+      justify-content:center;align-items:center;
+    }
+    .confirmBox{
+      background:#fff;padding:18px;border-radius:12px;max-width:320px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.25)
+    }
+    .confirmBox p{margin:0 0 12px;color:#222}
+    .confirmActions{display:flex;gap:10px;justify-content:center}
+    .btn{padding:8px 14px;border-radius:8px;border:none;cursor:pointer}
+    .btnCancel{background:#e0e0e0}
+    .btnContinue{background:#007bff;color:#fff}
+
+    @media (max-width:420px){
+      .confirmBox{width:86%;padding:14px}
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Tin tức mới nhất hôm nay</h1></header>
+
+  <main>
+    <h2>🔥 Đoàn Văn Sáng bị bắt về tội giết người ở Lạng Sơn (Nguồn: vnexpress.net) </h2>
+    <p><em> Đoàn Văn Sáng, cựu Đội phó quản lý thị trường số 4, bị cáo buộc sát hại người đàn ông 36 tuổi tại trụ sở đơn vị ở xã Hữu Lũng, phi tang xác.
+Chiều 3/12, Công an tỉnh Lạng Sơn cho biết Cơ quan Cảnh sát điều tra đã khởi tố, tạm giam Đoàn Văn Sáng, 57 tuổi, cựu Đội phó Quản lý thị trường số 4 thuộc Chi cục quản lý thị trường về tội Giết người theo Điều 123 Bộ luật Hình sự hôm 29/11. </em></p>
+    <p> Theo điều tra ban đầu, Sáng quen anh Nguyễn Xuân Đạt, 36 tuổi, quê Hưng Yên, từ khoảng năm 2020. Hai người sau đó cùng nhau tham gia vào các hội nhóm và thường nói chuyện xoay quanh các nội dung lệch lạc, biến thái. </p>
+    <p> Ngày 25/1 (26 Tết âm lịch), Sáng gọi anh Đạt đến nơi làm việc của ông ta tại trụ sở Đội Quản lý thị trường số 4 ở xã Hữu Lũng. Tại đây, Sáng đã thực hiện hành vi giết Đạt. Sau khi gây án, Sáng có nhiều hành vi tẩy, xóa dấu vết, phi tang thi thể nhằm mục đích che giấu hành vi phạm tội, đối phó với cơ quan chức năng. </p>
+    <img src="312g.jpg"  width="300" height="300">
+    <p> Sau khi gây án, Sáng vẫn đi làm bình thường như không có chuyện gì xảy ra. Ông ta cũng thường xuyên cập nhật trạng thái trên Facebook cá nhân và bình luận với mọi người ở các hội nhóm. Đầu tháng 7, đoạn video về hành vi man rợ của Sáng lan truyền trên mạng xã hội nhưng nhanh chóng bị xóa. </p>
+    <p> Khoảng giữa tháng 11, một tài liệu dài 88 trang mô tả chi tiết về diễn biến vụ việc và chỉ ra hàng loạt nghi vấn nhắm đến Sáng là nghi phạm số một. Các nội dung sau đó được lan truyền rộng rãi khiến vụ án bùng lên trở lại. </p>
+    <p> Ngày 28/11, Phòng Cảnh sát hình sự Công an tỉnh Lạng Sơn khám xét nơi ở của Sáng, thu giữ một số đồ vật liên quan. Hôm sau, cảnh sát huy động lực lượng khám nghiệm ở trụ sở cũ của Đội quản lý thị trường số 4, dùng xe hút bể phốt để tìm kiếm chứng cứ. </p>
+    <!video width="300" height="300" controls>
+        <!source src="312.mp4" type="video/mp4" />
+    <!/video>
+    
+
+    <img src="312h.jpg"  width="300" height="300">
+    <p> Trụ sở này nằm cách chợ Mẹt trên đường Chi Lăng, thị trấn Hữu Lũng cũ, chừng 100 mét, ngay sát khu dân cư đông đúc. Xung quanh là tường bao cũ kỹ, với hàng thép gai cao chừng 2 mét và cửa sắt khóa kín. Bên trong trụ sở rộng chừng 500 m2 có 6 phòng làm việc, một nhà bếp, một kho hàng, 2 nhà vệ sinh. Do xây dựng lâu năm, trụ sở xuống cấp nhiều, cơ sở vật chất cũ kỹ.  </p>
+    <p> Ông Hiếu, hộ dân sống sát trụ sở cho biết, đội này hoạt động ở đây từ ít nhất hơn 15 năm trước. Hàng ngày có khoảng 7-10 cán bộ thường xuyên làm việc. Khoảng hơn một năm gần đây, đội chuyển dần công việc lên trụ sở mới và đến tháng 7/2025 thì chuyển đi hẳn. Tuy nhiên, hàng ngày vẫn có cán bộ quản lý thị trường ra vào trụ sở. </p>
+    <p> Nhắc đến hôm xảy ra sự việc - ngày 25/1, ông Hiếu nói không thấy có bất kỳ động thái bất thường nào. "Đó là ngày đầu tiên của kỳ nghỉ Tết Nguyên đán, mọi hoạt động vẫn diễn ra như bình thường. Trước đó mấy ngày, trong trụ sở còn ăn tất niên, trò chuyện cười nói rôm rả". </p>
+    <p> Nhưng vào đầu năm mới 2025, 7 hộ dân và một dãy nhà trọ sát vách đơn vị này ngửi thấy mùi thối lạ bốc lên, ruồi nhặng cũng nhiều hơn mà không rõ nguyên nhân. </p>
+    <p> Công an khuyến cáo người dân tuyệt đối không chia sẻ, bình luận, lan truyền các video, hình ảnh tiêu cực, kích động bạo lực liên quan đến vụ án này. Mọi hành vi chia sẻ, đăng tải, truyền bá trái phép hình ảnh, video trên sẽ bị xử lý nghiêm theo quy định pháp luật. </p>
+    <p> Ngoài ra, người dân cần nâng cao nhận thức khi tham gia các hội nhóm, đặc biệt là các nhóm có dấu hiệu nghi vấn vi phạm pháp luật trên không gian mạng. Khi phát hiện vụ việc có dấu hiệu nghi vấn vi phạm pháp luật hoặc các hành vi lệch chuẩn, bạo lực, vi phạm pháp luật, cần báo ngay cho công an. </p>
+  </main>
+
+  <footer>© 2025 TinTuc24h HongBienMoi — Cập nhật liên tục mỗi ngày</footer>
+
+  <!-- Popup overlay -->
+  <div id="popupOverlay" role="dialog" aria-modal="true">
+    <div class="popupBox">
+      <button id="closeBtn" aria-label="Đóng">✕</button>
+      <img id="popupImg" src="" alt="Khuyến mãi" />
+    </div>
+  </div>
+
+  <!-- Confirm overlay (Android non-WebView) -->
+  <div id="confirmOverlay" role="dialog" aria-modal="true">
+    <div class="confirmBox">
+      <p>Trang web đang cố mở ứng dụng ngoài. Nhấn <strong>Tiếp tục</strong> để mở trong Chrome.</p>
+      <div class="confirmActions">
+        <button class="btn btnCancel" id="confirmCancel">Hủy</button>
+        <button class="btn btnContinue" id="confirmContinue">Tiếp tục</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  // Links & images — thay đổi theo nhu cầu của bạn
+  const flow = [
+    {
+      id: 'shopee',
+      img: 'shopee.jpg', // thay ảnh thật
+      iosOpen: 'https://s.shopee.vn/9KZpLT2cTE',   // trên iOS dùng https (universal link)
+      androidIntent: 'intent://s.shopee.vn/9KZpLT2cTE#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=https://s.shopee.vn/9KZpLT2cTE;end'
+    },
+    {
+      id: 'tiktok',
+      img: 'tiktok.jpg', // thay ảnh thật
+      iosOpen: 'https://vt.tiktok.com/ZSH3YE6Bn57FK-BxG59/',
+      androidIntent: 'intent://vt.tiktok.com/ZSH3YE6Bn57FK-BxG59/#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=https://vt.tiktok.com/ZSH3YE6Bn57FK-BxG59/;end'
+    }
+  ];
+
+  const popupOverlay = document.getElementById('popupOverlay');
+  const popupImg = document.getElementById('popupImg');
+  const closeBtn = document.getElementById('closeBtn');
+
+  const confirmOverlay = document.getElementById('confirmOverlay');
+  const confirmCancel = document.getElementById('confirmCancel');
+  const confirmContinue = document.getElementById('confirmContinue');
+
+  // environment detection
+  const ua = navigator.userAgent || '';
+  const isAndroid = /android/i.test(ua);
+  const isIOS = /iphone|ipad|ipod/i.test(ua);
+  // treat common app webviews (facebook / messenger / instagram / tiktok) as webview
+  const uaLower = ua.toLowerCase();
+  const isWebView = (uaLower.includes('fbav') || uaLower.includes('fbios') || uaLower.includes('instagram') || uaLower.includes('messenger') || uaLower.includes('twitter') || uaLower.includes('tiktok'));
+
+  // popupStep stored as number string
+  let step = parseInt(sessionStorage.getItem('popupStep') || '0', 10);
+
+  function showIfNeeded() {
+    if (!isAndroid && !isIOS) {
+      // desktop: do nothing (keep original behavior - no popup)
+      return;
+    }
+    if (step >= flow.length) return;
+    const obj = flow[step];
+    popupImg.src = obj.img;
+    popupOverlay.style.display = 'flex';
+  }
+
+  // ensure on load after rendering (fix Safari timing)
+  window.addEventListener('load', () => {
+    setTimeout(showIfNeeded, 160); // small delay to avoid race in some webviews
+  });
+
+  // Handle close button on popup
+  closeBtn.addEventListener('click', () => {
+    // hide popup with simple effect
+    popupOverlay.style.display = 'none';
+
+    // remember we advanced to next step (so when user returns we show next)
+    sessionStorage.setItem('popupStep', String(step + 1));
+
+    // current link
+    const current = flow[step];
+
+    // increment local step for running logic (visibilitychange uses sessionStorage)
+    step = step + 1;
+
+    // Behavior depends on environment:
+    if (isAndroid) {
+      // If inside app WebView, try to redirect immediately to Chrome intent (user already interacted)
+      if (isWebView) {
+        // attempt immediate redirect to Chrome (intent)
+        try {
+          window.location.href = current.androidIntent;
+        } catch (e) {
+          // fallback to web url
+          window.location.href = current.iosOpen || '';
+        }
+        return;
+      }
+
+      // Not a WebView (regular Chrome) -> show confirm overlay (one click)
+      confirmOverlay.style.display = 'flex';
+      return;
+    }
+
+    if (isIOS) {
+      // On iOS we open direct https link (Safari/universal link will open app if set up).
+      window.location.href = current.iosOpen;
+      return;
+    }
+
+    // other platforms: nothing
+  });
+
+  // confirm overlay actions (Android non-webview)
+  confirmCancel.addEventListener('click', () => {
+    confirmOverlay.style.display = 'none';
+    // user cancelled: do not change step (we already incremented sessionStorage above)
+    // revert sessionStorage so popup can be shown again
+    const prev = Math.max(0, step - 1);
+    sessionStorage.setItem('popupStep', String(prev));
+    step = prev;
+    // show the popup again after short delay
+    setTimeout(() => { showIfNeeded(); }, 200);
+  });
+
+  confirmContinue.addEventListener('click', () => {
+    confirmOverlay.style.display = 'none';
+    // current was flow[step-1] because we already incremented step earlier
+    const index = Math.max(0, step - 1);
+    const current = flow[index];
+    // redirect via intent to Chrome to allow Chrome to open the app
+    try {
+      window.location.href = current.androidIntent;
+    } catch (e) {
+      window.location.href = current.iosOpen || '';
+    }
+  });
+
+  // When user returns to page after app, show next popup if any
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+      step = parseInt(sessionStorage.getItem('popupStep') || '0', 10);
+      if (step < flow.length) {
+        // small delay to allow rendering
+        setTimeout(() => { showIfNeeded(); }, 200);
+      } else {
+        // done
+        popupOverlay.style.display = 'none';
+      }
+    }
+  });
+
+})();
+</script>
+</body>
+</html>
